@@ -1,0 +1,48 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  8
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0/hydrogenArea";
+    object      rhoGas_hydrogen;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [1 -3 0 0 0 0 0];
+
+internalField   uniform #calc "2.01588e-3 * 1e5 / (8.3145*293.15)";
+
+boundaryField
+{
+    inlet
+    {
+        type            fixedValue;
+        value           uniform #calc "2.01588e-3 * 5e5 / (8.3145*293.15)";
+    }
+
+    "(tankWall.*)"
+    {
+        type            zeroGradient;
+    }
+
+    "(front|back)"
+    {
+        type            wedge;
+    }
+
+    hydrogenArea_to_metalArea
+    {
+        type            fixedValue;
+        value           $internalField;
+    }
+}
+
+
+// ************************************************************************* //
