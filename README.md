@@ -1,7 +1,7 @@
 # twoRegionHydrideFoam
 
 Repository associated to the paper entitled **Development of an OpenFOAM Solver to investigate the dynamic absorption and desorption processes in metal-hydrides** by **Ulrich et al.**
-* doi: TBD
+* doi: https://doi.org/10.51560/ofj.v5.110
 
 # The contents of the repository folders are the following:
 * Example_Cases_preconfigured: Preconfigured cases to run and to test the published solver
