@@ -131,7 +131,7 @@ volScalarField C_d
         IOobject::NO_WRITE
     ),
     metalArea,
-    dimensionedScalar("C_d", dimensionSet(0,0,-1,0,0,0,0), subDict.lookup("C_a"))
+    dimensionedScalar("C_d", dimensionSet(0,0,-1,0,0,0,0), subDict.lookup("C_d"))
 );
 
 volScalarField massPercentAbsorp
